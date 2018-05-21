@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="The web design portfolio of Bastien Bouquin">
+        <meta name="keywords" content="bastien, bouquin, bastien bouquin, web, website, websites, web design, design, graphic design, logo design, freelance, responsive, mobile, mobile design, development,developpement, responsive development, web development, unique, fun, developer, illustration, affordable, small business, pme, entreprises, personal, blog, portfolio">
+        <!-- <link rel="stylesheet" href="dist/css/style.css" type="text/css" media="screen"> -->
+    </head>
+    <body>
+        <nav>
+            <div class="center-nav">
+                <a href="#">Accueil</a>
+                <a href="#">A propos</a>
+                <a href="#">Portfolio</a>
+                <a class="active" href="#">Contact</a>
+            </div>
+        </nav>
+
+        <div id="home">
+            <header>
+                <h1>BASTIEN BOUQUIN</h1>
+                <h2>Développeur full stack en freelance disponible pour vous dés maintenant.</h2>
+            </header>
+
+            <div class="down-button-apropos">
+                <a href="#about" class="about-nav"> A propos </a>
+            </div>
+        </div>
+
+
+
+        <div id="about">
+            <div class="top-separator"></div>
+            <header>
+                <p>Bonjour, je m'appelle Bastien et je crée des sites web fonctionnels pour les particuliers, start-ups, associations et PME.</p>
+                <p>Ici vous avez un aperçu des services que je peux vous fournir. </p>
+            </header>
+            <div class="web-qualities">
+                <div class="quality">
+                    <img src="./assets/Ergonomic.svg"/>
+                    <h2>Ergonomique</h2>
+                    <p>qklsdbf kljq shblk qklsdbf klqsdklq sdlqk kls</p>
+                </div>
+                <div class="quality">
+                    <img src="./assets/Minimalist.svg"/>
+                    <h2>Minimaliste</h2>
+                    <p>qklsdbf kljq shblk qklsdbf klqsdklq sdlqk kls</p>
+                </div>
+                <div class="quality">
+                    <img src="./assets/Personalized.svg"/>
+                    <h2>Personalisée</h2>
+                    <p>qklsdbf kljq shblk qklsdbf klqsdklq sdlqk kls</p>
+                </div>
+
+                <div class="quality">
+                    <img src="./assets/Professional.svg"/>
+                    <h2>Professionnel</h2>
+                    <p>qklsdbf kljq shblk qklsdbf klqsdklq sdlqk kls</p>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div class="me">
+                <h1>A propos</h1>
+                <p>J'ai étudié à l'IUT Paris Déscartes et obtenu mon DUT informatique en 2017.
+                    J'ai ensuite obtenu mon DUETI informatique au Canada ou j'ai pu expérimenter un peu plus avec le développement web et de jeux vidéos.
+                    Je suis maintenant en train de me construire un portfolio dans le développemnt de sites web car je viens à peine de finir mes études.
+                    A mes heures perdues, je suis illustrateur et photographe. Ce qui m'aide grandement dans la conception et la création des sites webs.
+                    Sinon, j'aime faire du sport, lire des livres, dessiner et cuisiner.
+                </p>
+            </div>
+            <div class="bottom-separator"></div>
+        </div>
+
+        <div id="portfolio">
+            <h1>Portfolio</h1>
+            <article>
+                <img src="assets/images/site1.jpeg" alt="image du site"/>
+                <header>
+                    <h3>Portfolio artistique</h3>
+                    <p>
+                        A été réalisé dans le cadre d'un cours de technologies web.
+                        Le site à été réalisé avec symfony 4.
+                        C'est un site artistique qui permet au propriétaire de poster des galleries de photos organisées.
+                        Suivre le lien ici.
+                    </p>
+                </header>
+            </article>
+            <div class="separator"><span class="square"></span></div>
+            <article>
+                <img src="assets/images/site1.jpeg" alt="image du site"/>
+                <header>
+                    <h3>Portfolio artistique</h3>
+                    <p>
+                        A été réalisé dans le cadre d'un cours de technologies web.
+                        Le site à été réalisé avec symfony 4.
+                        C'est un site artistique qui permet au propriétaire de poster des galleries de photos organisées.
+                        <br>
+                        <br>
+                        Suivre le lien <a href="">ici</a>.
+                    </p>
+                </header>
+            </article>
+            <div class="separator"><span class="square"></span></div>
+            <article>
+                <img src="assets/images/site1.jpeg" alt="image du site"/>
+                <header>
+                    <h3>Portfolio artistique</h3>
+                    <p>
+                        A été réalisé dans le cadre d'un cours de technologies web.
+                        Le site à été réalisé avec symfony 4.
+                        C'est un site artistique qui permet au propriétaire de poster des galleries de photos organisées.
+                        Suivre le lien ici.
+                    </p>
+                </header>
+            </article>
+        </div>
+
+        <div id="contact">
+            <!-- <div class="middle-square"></div> -->
+            <h1>Contact</h1>
+            <form action="mail.php" method="post">
+                <div class="infos">
+                    <div>
+                        <label for="nom">Nom</label>
+                        <input type="text" name="nom" placeholder="Votre Nom" required="required"/>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="nom@exemple.com" required="required"/>
+                    </div>
+                </div>
+                <label for="objet">Objet</label>
+                <input type="text" name="objet" placeholder="Demande de contact" required="required">
+                <label for="corps">Message</label>
+                <textarea name="corps" placeholder="Bonjour, ..." required="required"></textarea>
+                <input class="button" type="submit" value="Envoyer">
+            </form>
+        </div>
+
+        
+
+        <footer>
+
+        </footer>
+        <script src="dist/bundle.js"></script>
+    </body>
+</html>
+
+<!-- #c5addd website color -->
