@@ -8,13 +8,13 @@
         <!-- <link rel="stylesheet" href="dist/css/style.css" type="text/css" media="screen"> -->
     </head>
     <body>
-        <nav>
+        <nav class="visibleNav closedNav">
             <div class="center-nav">
                 <div class="navigation-button" href="#"><span class="bars"></span></div>
-                <a href="#">Accueil</a>
-                <a href="#">A propos</a>
-                <a href="#">Portfolio</a>
-                <a class="active" href="#">Contact</a>
+                <a href="#home">Accueil</a>
+                <a href="#about">A propos</a>
+                <a href="#portfolio-anchor">Portfolio</a>
+                <a class="active" href="#contact">Contact</a>
             </div>
         </nav>
 
@@ -70,7 +70,7 @@
                     Sinon, j'aime faire du sport, lire des livres, dessiner et cuisiner.
                 </p>
             </div>
-            <div class="bottom-separator"></div>
+            <div class="bottom-separator" id="portfolio-anchor"></div>
         </div>
 
         <div id="portfolio">
@@ -99,20 +99,7 @@
                         C'est un site prototype qui n'est pas complet mais qui m'a permis d'expérimenter avec les animations.
                         <br>
                         <br>
-                        Suivre le lien <a href="">ici</a>.
-                    </p>
-                </header>
-            </article>
-            <div class="separator"><span class="square"></span></div>
-            <article>
-                <img src="assets/images/site1.jpeg" alt="image du site"/>
-                <header>
-                    <h3>Portfolio artistique</h3>
-                    <p>
-                        A été réalisé dans le cadre d'un cours de technologies web.
-                        Le site à été réalisé avec symfony 4.
-                        C'est un site artistique qui permet au propriétaire de poster des galleries de photos organisées.
-                        Suivre le lien ici.
+                        Suivre le lien <a href="https://skitak.github.io/Atelier-portfolio">ici</a>.
                     </p>
                 </header>
             </article>
@@ -122,7 +109,7 @@
             <!-- <div class="middle-square"></div> -->
             <h1>Contact</h1>
             <div class="title-separator"></div>
-            <form action="mail.php" method="post">
+            <form action="#" method="post" name="email">
                 <div class="infos">
                     <div>
                         <label for="nom">Nom</label>
