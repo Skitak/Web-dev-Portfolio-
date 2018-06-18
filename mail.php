@@ -1,26 +1,30 @@
 <?php
 // the message
-
+// echo "hi";
 if (!isset($_POST["nom"]))
-    return json_encode(["status" => "error", "message" => "Vous devez écrire un nom."]);
+    echo json_encode(["status" => "error", "message" => "Vous n'avez pas écrit un nom."]);
+else if (!isset($_POST["email"]))
+    echo json_encode(["status" => "error", "message" => "Vous n'avez pas mis votre adresse email."]);
 
-if (!isset($_POST["email"]))
-    return json_encode(["status" => "error", "message" => "Vous devez écrire une adresse email valide."]);
+else if (!isset($_POST["objet"]))
+    echo json_encode(["status" => "error", "message" => "Vous n'avez pas mis d'objet à votre message."]);
 
-if (!isset($_POST["objet"]))
-    return json_encode(["status" => "error", "message" => "Vous devez ajouter un objet à votre message."]);
+else if (!isset($_POST["message"]))
+    echo json_encode(["status" => "error", "message" => "Vous n'avez pas écrit de message."]);
 
-if (!isset($_POST["message"]))
-    return json_encode(["status" => "error", "message" => "Vous devez écrire un message."]);
-$msg = $_POST["nom"];
+else {
+    $msg = $_POST["message"];
 
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
+    // use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg,70);
+    
+    // send email
+    mail($_POST["email"],$_POST["nom"] + " : " + $_POST["objet"],$msg);
+    mail("bastienbouquin@gmail.com",$_POST["nom"] + " : " + $_POST["objet"],$msg);
+    
+    echo json_encode(["status" => "success", "message" => 
+    "Votre message a bien été envoyé.
+    Vous devrez aussi recevoir une copie du message."]);
 
-// send email
-mail($_POST["email"],$_POST["objet"],$msg);
-
-return json_encode(["status" => "success", "message" => 
-"Votre message a bien été envoyé. Si vous n'avez pas reçu de copie du mail envoyé, il est possible qu'une erreur ait eu lieu.
-Dans ce cas "])
+}    
 ?>
