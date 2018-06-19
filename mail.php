@@ -14,15 +14,15 @@ else if (!isset($_POST["message"]))
 
 else {
     $to = "bastienbouquin@gmail.com, " . $_POST["email"];
-    $msg += $_POST["message"];
+    $msg = $_POST["message"];
 
     // use wordwrap() if lines are longer than 70 characters
-    // $msg = wordwrap($msg,70);
+    $msg = wordwrap($msg,70);
 
     $headers = "From: " . $_POST["nom"] . " <" . $_POST["email"] . ">";
     
     // send email
-    mail($_POST["email"],$_POST["objet"],"bonjour");
+    mail($_POST["email"],$_POST["objet"],$msg);
     // mail("bastienbouquin@gmail.com",$_POST["objet"],$msg);
     
     echo json_encode(["status" => "success", "message" => 
