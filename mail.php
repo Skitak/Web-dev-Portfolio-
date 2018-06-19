@@ -14,7 +14,7 @@ else if (!isset($_POST["message"]))
 
 else {
     $to = "bastienbouquin@gmail.com, " . $_POST["email"];
-    $msg = $_POST["message"];
+    $msg = "Message de :" . $_POST["nom"] . "\r\n" . $_POST["message"];
 
     // use wordwrap() if lines are longer than 70 characters
     $msg = wordwrap($msg,70);
