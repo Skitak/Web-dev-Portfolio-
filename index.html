@@ -1,16 +1,17 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="The web design portfolio of Bastien Bouquin">
         <meta name="keywords" content="bastien, bouquin, bastien bouquin, web, website, websites, web design, design, graphic design, logo design, freelance, responsive, mobile, mobile design, development,developpement, responsive development, web development, unique, fun, developer, illustration, affordable, small business, pme, entreprises, personal, blog, portfolio">
+        <title>Bastien Bouquin - Web Designer</title>
         <!-- <link rel="stylesheet" href="dist/css/style.css" type="text/css" media="screen"> -->
     </head>
     <body>
         <nav class="visibleNav closedNav">
             <div class="center-nav">
-                <div class="navigation-button-menu" href="#"><span class="bars"></span></div>
+                <div class="navigation-button-menu"><span class="bars"></span></div>
                 <a class="active navigation-button" href="#home">Accueil</a>
                 <a class="navigation-button" href="#about">A propos</a>
                 <a class="navigation-button" href="#portfolio-anchor">Portfolio</a>
@@ -39,23 +40,23 @@
             </header>
             <div class="web-qualities">
                 <div class="quality">
-                    <img src="./assets/Ergonomic.svg"/>
+                    <img src="./assets/Ergonomic.svg" alt="ergonomic icon"/>
                     <h2>Ergonomique</h2>
                     <p>La facilité d'utilisation et de compréhension de votre site web sont mes priorités. </p>
                 </div>
                 <div class="quality">
-                    <img src="./assets/Minimalist.svg"/>
+                    <img src="./assets/Minimalist.svg" alt="minimalist icon"/>
                     <h2>Minimaliste</h2>
                     <p>Un style graphique simple et épuré pour un confort d'utilisation optimal. </p>
                 </div>
                 <div class="quality">
-                    <img src="./assets/Personalized.svg"/>
+                    <img src="./assets/Personalized.svg" alt="Personalisé icon"/>
                     <h2>Personalisé</h2>
                     <p>Votre site doit vous correspondre pour qu'il soit unique et remarquable. </p>
                 </div>
 
                 <div class="quality">
-                    <img src="./assets/Professional.svg"/>
+                    <img src="./assets/Professional.svg" alt="Professionnel icon"/>
                     <h2>Professionnel</h2>
                     <p>Parce que votre site vous représente, il doit vous permettre d'inspirer confiance. </p>
                 </div>
@@ -112,22 +113,23 @@
             <div class="contact-informations">
                 <p>Téléphone : 06 05 47 99 17</p>
                 <p>Email : bastienbouquin@gmail.com</p>
+                </br>
             </div>
             <form action="mail.php" method="post" name="email">
                 <div class="infos">
                     <div>
                         <label for="nom">Nom</label>
-                        <input type="text" name="nom" placeholder="Votre Nom" required="required"/>
+                        <input type="text" name="nom" id="nom" placeholder="Votre Nom" required="required"/>
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="nom@exemple.com" required="required"/>
+                        <input type="email" name="email" id="email" placeholder="nom@exemple.com" required="required"/>
                     </div>
                 </div>
                 <label for="objet">Objet</label>
-                <input type="text" name="objet" placeholder="Demande de contact" required="required">
-                <label for="corps">Message</label>
-                <textarea name="message" placeholder="Bonjour, ..." required="required"></textarea>
+                <input type="text" name="objet" id="objet" placeholder="Demande de contact" required="required">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" placeholder="Bonjour, ..." required="required"></textarea>
                 <input class="button" type="submit" value="Envoyer">
             </form>
         </div>

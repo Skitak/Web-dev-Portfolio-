@@ -26,8 +26,9 @@ else {
     // mail("bastienbouquin@gmail.com",$_POST["objet"],$msg);
     
     echo json_encode(["status" => "success", "message" => 
-    "Votre message a bien été envoyé.
-    Vous devrez aussi recevoir une copie du message."]);
+    // "Votre message a bien été envoyé.
+    // Vous devrez aussi recevoir une copie du message."]);
+    $_POST["message"]]);
 
 }    
 ?>
