@@ -17,7 +17,7 @@ else {
     $msg += $_POST["message"];
 
     // use wordwrap() if lines are longer than 70 characters
-    $msg = wordwrap($msg,70);
+    // $msg = wordwrap($msg,70);
 
     $headers = "From: " . $_POST["nom"] . " <" . $_POST["email"] . ">";
     
