@@ -22,13 +22,12 @@ else {
     $headers = "From: " . $_POST["nom"] . " <" . $_POST["email"] . ">";
     
     // send email
-    mail($_POST["email"],$_POST["objet"],$msg);
+    mail($_POST["email"],$_POST["objet"],"bonjour");
     // mail("bastienbouquin@gmail.com",$_POST["objet"],$msg);
     
     echo json_encode(["status" => "success", "message" => 
-    // "Votre message a bien été envoyé.
-    // Vous devrez aussi recevoir une copie du message."]);
-    $_POST["message"]]);
+    "Votre message a bien été envoyé.
+    Vous devrez aussi recevoir une copie du message."]);
 
 }    
 ?>
