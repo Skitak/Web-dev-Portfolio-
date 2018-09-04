@@ -6,6 +6,7 @@ var path = require("path");
 module.exports = {
   entry: "./src/main.js",
   watch : true,
+  mode: 'production',
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
@@ -17,11 +18,11 @@ module.exports = {
         test: /\.js$/,
         use: {
           loader: "babel-loader",
-          options: { presets: ["es2015"] }
+          // options: { presets: ["es2015"] }
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           {
             loader: "style-loader" // creates style nodes from JS strings
@@ -31,6 +32,35 @@ module.exports = {
           },
           {
             loader: "sass-loader" // compiles Sass to CSS
+          }
+        ]
+      },{
+        test: /\.(gif|png|jpg|jpe?g|svg)/i,
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            // options: {
+            //   mozjpeg: {
+            //     progressive: true,
+            //     quality: 65
+            //   },
+            //   // optipng.enabled: false will disable optipng
+            //   optipng: {
+            //     enabled: false,
+            //   },
+            //   pngquant: {
+            //     quality: '65-90',
+            //     speed: 4
+            //   },
+            //   gifsicle: {
+            //     interlaced: false,
+            //   },
+            //   // the webp option will enable WEBP
+            //   webp: {
+            //     quality: 75
+            //   }
+            // }
           }
         ]
       }
