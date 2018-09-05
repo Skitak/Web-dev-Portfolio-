@@ -1,69 +1,72 @@
-/* === dont forget to import scss to main.js file === */
-
-
-var path = require("path");
-
+const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
-  entry: "./src/main.js",
-  watch : true,
-  mode: 'production',
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/dist"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: {
-          loader: "babel-loader",
-          // options: { presets: ["es2015"] }
-        }
-      },
-      {
-        test: /\.s?css$/,
-        use: [
-          {
-            loader: "style-loader" // creates style nodes from JS strings
-          },
-          {
-            loader: "css-loader" // translates CSS into CommonJS
-          },
-          {
-            loader: "sass-loader" // compiles Sass to CSS
-          }
+    entry: { main: './src/index.js' },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[chunkhash].js'
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        })
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    'file-loader',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true, // webpack@1.x
+                            disable: true, // webpack@2.x and newer
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    {
+                        loader : 'sass-loader',
+                        options: {
+                            includePaths: ["node_modules/skeleton-css/css/"]
+                        }
+                    }
+                ]
+            } 
         ]
-      },{
-        test: /\.(gif|png|jpg|jpe?g|svg)/i,
-        use: [
-          "file-loader",
-          {
-            loader: "image-webpack-loader",
-            // options: {
-            //   mozjpeg: {
-            //     progressive: true,
-            //     quality: 65
-            //   },
-            //   // optipng.enabled: false will disable optipng
-            //   optipng: {
-            //     enabled: false,
-            //   },
-            //   pngquant: {
-            //     quality: '65-90',
-            //     speed: 4
-            //   },
-            //   gifsicle: {
-            //     interlaced: false,
-            //   },
-            //   // the webp option will enable WEBP
-            //   webp: {
-            //     quality: 75
-            //   }
-            // }
-          }
-        ]
-      }
+    },
+    plugins: [
+        new CleanWebpackPlugin('dist' , {}),
+        new MiniCssExtractPlugin({
+            filename: 'style.[contenthash].css',
+        }),
+        new HtmlWebpackPlugin({
+          inject: false,
+          hash: true,
+          template: './src/index.html',
+          filename: 'index.html'
+        }),
+        new WebpackMd5Hash()
     ]
-  }
 };
