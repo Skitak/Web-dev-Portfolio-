@@ -23,7 +23,7 @@ else {
     
     // send email
     mail($_POST["email"],$_POST["objet"],$msg);
-    // mail("bastienbouquin@gmail.com",$_POST["objet"],$msg);
+    mail("bastienbouquin@gmail.com",$_POST["objet"],$msg);
     
     echo json_encode(["status" => "success", "message" => 
     "Votre message a bien été envoyé.
